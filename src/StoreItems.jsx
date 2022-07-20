@@ -121,9 +121,11 @@ export default function Store() {
               // don't need arrow func because handleChange is curried func
               onChange={handleChange(item.id)}
             />
-            {item.quantity == 5
-              ? window.alert("You've reached the limit")
-              : null}
+            {item.quantity == 5 ? (
+              <div style={{ marginTop: "10px", color: "red" }}>
+                You've reached the maximum limit.
+              </div>
+            ) : null}
           </section>
         ))}
       </div>
